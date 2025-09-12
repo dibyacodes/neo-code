@@ -1,9 +1,7 @@
-# Dibya's Minimalist Neovim Setup
+## Dibyacode's Neovim Setup
+Make your shit code look atleast pretty.
 
 A clean, minimal, and eye-friendly Neovim configuration built for productivity. Features a custom color scheme with orange and white on a pure black/terminal background, optimized for JavaScript/TypeScript, Python, and web development.
-
-![Neovim Setup Preview](https://via.placeholder.com/800x400/000000/d08700?text=Clean+Neovim+Setup)
-*(Consider adding a screenshot of your setup here)*
 
 ## ✨ Features
 
@@ -36,6 +34,76 @@ A clean, minimal, and eye-friendly Neovim configuration built for productivity. 
 - Python (for LSP support)
 
 ### Quick Install
-    1. **Backup your existing config** (if any):
-        ```bash
-           mv ~/.config/nvim ~/.config/nvim.backup
+1.  Backup your existing Neovim configuration (if you have one).
+2.  Clone this repository to your Neovim config directory.
+3.  Start Neovim - the plugin manager will automatically install all dependencies.
+4.  Wait for the installation to complete, then restart Neovim.
+
+## ⌨️ Keymaps
+
+### Leader Key
+- `<space>` - Leader key (instead of default `\`)
+
+### File Operations
+- `<space>e` - Toggle file explorer (nvim-tree)
+- `<space>ff` - Reveal current file in explorer
+
+### Telescope (Fuzzy Finder)
+- `<space>sf` - Search Files (fuzzy file finder)
+- `<space>sg` - Search by Grep (live grep in files)
+- `<space>sb` - Search Buffers (open files)
+- `<space>sh` - Search Help (documentation)
+- `<space>sc` - Search Current word (grep word under cursor)
+
+### LSP (Language Server Protocol)
+- `gd` - Go to definition
+- `K` - Show documentation hover
+- `<space>ca` - Code actions (refactor, fix, etc.)
+
+## 🎨 Color Scheme
+
+The custom color scheme uses only two main colors for minimal visual noise:
+- **White** (`#ffffff`): Primary text color
+- **Orange** (`#d08700`): Comments, constants, special syntax
+- **Black/Terminal BG**: Pure black or terminal background
+
+## ⚙️ Project Structure
+
+~/.config/nvim/
+├── init.lua
+├── lua/
+│ ├── options.lua
+│ └── plugins/
+│ ├── init.lua
+│ ├── lsp.lua
+│ ├── telescope.lua
+│ ├── nvim-tree.lua
+│ └── ui.lua
+└── README.md
+
+
+## 🔧 Customization
+
+### Adding New LSP Servers
+Edit `lua/plugins/lsp.lua` and add to the `ensure_installed` list.
+
+### Changing Colors
+Edit `lua/options.lua` and modify the highlight groups.
+
+### Adding Plugins
+Add new plugins to the appropriate file in `lua/plugins/` or create a new file.
+
+## ❓ Troubleshooting
+
+### LSP Servers Not Installing
+Run `:Mason` to manually install or check LSP server status.
+
+### Plugins Not Loading
+Run `:Lazy` to check plugin status and debug issues.
+
+### Colors Look Wrong
+Ensure you have `termguicolors` enabled in your terminal.
+
+**Happy Coding!** 🚀
+
+The name is [**Dibyacodes**](https://x.com/dibyacodes)
