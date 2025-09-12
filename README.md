@@ -70,16 +70,16 @@ The custom color scheme uses only two main colors for minimal visual noise:
 ## ⚙️ Project Structure
 
 ~/.config/nvim/
-├── init.lua
+├── init.lua              # Main entry point
 ├── lua/
-│ ├── options.lua
-│ └── plugins/
-│ ├── init.lua
-│ ├── lsp.lua
-│ ├── telescope.lua
-│ ├── nvim-tree.lua
-│ └── ui.lua
-└── README.md
+│   ├── options.lua       # Editor options & custom colors
+│   └── plugins/
+│       ├── init.lua      # Aggregates all plugins
+│       ├── lsp.lua       # LSP, autocomplete, snippets
+│       ├── telescope.lua # Fuzzy finding
+│       ├── nvim-tree.lua # File explorer
+│       └── ui.lua        # Statusline, aesthetics
+└── README.md             # This file
 
 
 ## 🔧 Customization
