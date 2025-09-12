@@ -68,7 +68,7 @@ The custom color scheme uses only two main colors for minimal visual noise:
 - **Black/Terminal BG**: Pure black or terminal background
 
 ## ⚙️ Project Structure
-
+```
 ~/.config/nvim/
 ├── init.lua              # Main entry point
 ├── lua/
@@ -80,7 +80,7 @@ The custom color scheme uses only two main colors for minimal visual noise:
 │       ├── nvim-tree.lua # File explorer
 │       └── ui.lua        # Statusline, aesthetics
 └── README.md             # This file
-
+```
 
 ## 🔧 Customization
 
