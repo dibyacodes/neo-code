@@ -44,8 +44,8 @@ vim.cmd([[
   highlight Visual guibg=#333333
 
   " Status line (will be used by lualine)
-  highlight StatusLine guifg=#000000 guibg=#3f3f46 gui=bold
-  highlight StatusLineNC guifg=#666666 guibg=#1a1a1a
+  highlight StatusLine guifg=#000000 guibg=#7e2a0c gui=bold
+  highlight StatusLineNC guifg=#eff6ff guibg=#eff6ff
 
   " Pmenu (completion menu)
   highlight Pmenu guifg=#ffffff guibg=#1a1a1a
