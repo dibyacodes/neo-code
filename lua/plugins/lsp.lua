@@ -36,7 +36,9 @@ return {
 
       -- Setup each server we installed via mason-lspconfig
       lspconfig.ts_ls.setup({ capabilities = capabilities })
-      lspconfig.html.setup({ capabilities = capabilities })
+      lspconfig.html.setup({ capabilities = capabilities ,
+      filetypes = {"html","javascriptreact","typescriptreact"}
+      })
       lspconfig.cssls.setup({ capabilities = capabilities })
       lspconfig.tailwindcss.setup({ capabilities = capabilities })
       lspconfig.pyright.setup({ capabilities = capabilities })
