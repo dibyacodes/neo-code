@@ -3,6 +3,21 @@ Make your shit code look atleast pretty.
 
 A clean, minimal, and eye-friendly Neovim configuration built for productivity. Features a custom color scheme with orange and white on a pure black/terminal background, optimized for JavaScript/TypeScript, Python, and web development.
 
+## 🚀 Installation
+
+### Prerequisites
+- Neovim (v0.9+ recommended)
+- Git
+- Node.js (for LSP support)
+- Python (for LSP support)
+
+### Quick Install
+1.  Backup your existing Neovim configuration (if you have one).
+2.  Clone this repository to your Neovim config directory. `~/.config/nvim`
+3.  Start Neovim - the plugin manager will automatically install all dependencies.
+4.  Wait for the installation to complete, then restart Neovim.
+
+
 ## ✨ Features
 
 - **🎨 Custom Color Scheme**: Minimalist orange (`#d08700`) and white syntax highlighting on a pure black/terminal background
@@ -25,24 +40,16 @@ A clean, minimal, and eye-friendly Neovim configuration built for productivity. 
 - **File Explorer**: [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
 - **Status Line**: [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 
-## 🚀 Installation
-
-### Prerequisites
-- Neovim (v0.9+ recommended)
-- Git
-- Node.js (for LSP support)
-- Python (for LSP support)
-
-### Quick Install
-1.  Backup your existing Neovim configuration (if you have one).
-2.  Clone this repository to your Neovim config directory.
-3.  Start Neovim - the plugin manager will automatically install all dependencies.
-4.  Wait for the installation to complete, then restart Neovim.
-
 ## ⌨️ Keymaps
 
 ### Leader Key
 - `<space>` - Leader key (instead of default `\`)
+
+### Switch between Splits/Windows
+- `Ctrl + h` - Switch to the split on your left
+- `Ctrl + l` - Switch to the split on your right
+- `Ctrl + j` - Switch to the lower split
+- `Ctrl + k` - Switch to the upper split
 
 ### File Operations
 - `<space>e` - Toggle file explorer (nvim-tree)

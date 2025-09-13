@@ -22,8 +22,8 @@ return {
             -- Use simple ASCII arrows for folders (no font required!)
             glyphs = {
               folder = {
-                arrow_closed = ">",  -- Closed folder: right-pointing angle bracket
-                arrow_open = "v",    -- Open folder: down-pointing angle bracket
+                arrow_closed = "▶",  -- Closed folder: right-pointing angle bracket
+                arrow_open = "▼",    -- Open folder: down-pointing angle bracket
               },
             },
             -- Disable all other icons to keep it clean and universal
@@ -44,9 +44,9 @@ return {
         },
         actions = {
           open_file = {
-            quit_on_open = true,
+            quit_on_open = false,
             window_picker = {
-              enable = false,
+              enable = true,
             },
           },
         },

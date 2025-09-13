@@ -2,6 +2,13 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Keymaps to switch between workspaces/splits
+vim.keymap.set('n','<C-h>','<C-w>h',{desc = 'Go to left window / split'})
+vim.keymap.set('n','<C-l>','<C-w>l',{desc = 'Go to right window/splits'})
+vim.keymap.set('n','<C-j>','<C-w>j',{desc = 'Go to lower window / split'})
+vim.keymap.set('n','<C-k>','<C-w>k',{desc = 'Go to upper window / split'})
+
+
 -- Basic editor options
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -21,7 +28,7 @@ vim.cmd("highlight clear")
 vim.cmd([[
   " Base colors
   highlight Normal guifg=#ffffff guibg=NONE
-  highlight Comment guifg=#d08700 gui=italic
+  highlight Comment guifg=#005f5a gui=italic
   highlight Constant guifg=#d08700
   highlight Identifier guifg=#ffffff
   highlight Statement guifg=#ffffff
@@ -32,13 +39,12 @@ vim.cmd([[
   highlight Error guifg=#ffffff guibg=#d08700
 
   " UI elements
-  highlight LineNr guifg=#666666 guibg=NONE
-  highlight CursorLine guibg=#1a1a1a
-  highlight CursorLineNr guifg=#d08700 guibg=NONE
+  highlight LineNr guifg=#71717b guibg=NONE
+  highlight CursorLineNr guifg=#f4f4f5 guibg=NONE
   highlight Visual guibg=#333333
 
   " Status line (will be used by lualine)
-  highlight StatusLine guifg=#000000 guibg=#d08700
+  highlight StatusLine guifg=#000000 guibg=#3f3f46 gui=bold
   highlight StatusLineNC guifg=#666666 guibg=#1a1a1a
 
   " Pmenu (completion menu)
