@@ -3,6 +3,10 @@ Make your shit code look atleast pretty.
 
 A clean, minimal, and eye-friendly Neovim configuration built for productivity. Features a custom color scheme with orange and white on a pure black/terminal background, optimized for JavaScript/TypeScript, Python, and web development.
 
+<img width="1920" height="1080" alt="Screenshot From 2025-09-13 10-10-55" src="https://github.com/user-attachments/assets/605b3dda-15e6-4713-9bb6-b400331dbf74" />
+<img width="1920" height="1080" alt="Screenshot From 2025-09-13 10-25-28" src="https://github.com/user-attachments/assets/fd5f609e-ab26-425b-9989-ebe399460d56" />
+
+
 ## 🚀 Installation
 
 ### Prerequisites
