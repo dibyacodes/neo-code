@@ -44,7 +44,12 @@ return {
       lspconfig.pyright.setup({ capabilities = capabilities })
       lspconfig.bashls.setup({ capabilities = capabilities })
       lspconfig.jsonls.setup({ capabilities = capabilities })
-      lspconfig.emmet_ls.setup({ capabilities = capabilities })
+      lspconfig.emmet_ls.setup({ capabilities = capabilities,
+      filetypes = {
+	      'html',
+	      'css',
+	      -- REMOVE 'javascriptreact' and 'typescriptreact' from here
+      },})
 
       -- Keymaps for LSP functionality (VERY USEFUL)
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})

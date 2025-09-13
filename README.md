@@ -1,5 +1,4 @@
 ## Dibyacode's Neovim Setup
-Make your shit code look atleast pretty.
 
 A clean, minimal, and eye-friendly Neovim configuration built for productivity. Features a custom color scheme with orange and white on a pure black/terminal background, optimized for JavaScript/TypeScript, Python, and web development.
 
