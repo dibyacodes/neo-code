@@ -26,7 +26,18 @@ return {
 				-- to learn the available actions
 				lsp_zero.default_keymaps({ buffer = bufnr })
 			end)
-			require('lspconfig').ts_ls.setup({})
+			require('lspconfig').ts_ls.setup({
+  on_attach = function(client, bufnr)
+    -- Tell tsserver to use Biome for formatting
+    client.server_capabilities.documentFormattingProvider = true
+    -- Set Biome as the formatter for this buffer
+    vim.api.nvim_buf_set_var(bufnr, 'typescript.format', {
+      command = 'biome',
+      args = { 'format', '--stdin-file-path', '%',
+      '--config-path=~/.config/nvim/biome/biome.json'},
+    })
+  end,
+})
 			require('lspconfig').html.setup({})
 			require('lspconfig').cssls.setup({})
 			require('lspconfig').tailwindcss.setup({})

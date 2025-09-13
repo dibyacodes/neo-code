@@ -1,7 +1,12 @@
 -- Set the leader key to space
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.opt.fileformats = "unix"
+vim.opt.fileformat = "unix"
 
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 -- Keymaps to switch between workspaces/splits
 vim.keymap.set('n','<C-h>','<C-w>h',{desc = 'Go to left window / split'})
 vim.keymap.set('n','<C-l>','<C-w>l',{desc = 'Go to right window/splits'})
@@ -24,19 +29,27 @@ local bg_color = "NONE" -- This makes it use terminal background
 -- Clear all existing highlighting first
 vim.cmd("highlight clear")
 
+vim.api.nvim_create_augroup("auto_format", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePre", {
+	group = "auto_format",
+	pattern = { "*.js", "*.jsx", "*.ts", "*.tsx", "*.html", "*.css", "*.json" },
+	callback = function()
+		vim.lsp.buf.format({ async = false })
+	end,
+})
 -- Set our custom color scheme
 vim.cmd([[
-  " Base colors
-  highlight Normal guifg=#ffffff guibg=NONE
-  highlight Comment guifg=#005f5a gui=italic
-  highlight Constant guifg=#d08700
-  highlight Identifier guifg=#ffffff
-  highlight Statement guifg=#ffffff
-  highlight PreProc guifg=#d08700
-  highlight Type guifg=#ffffff
-  highlight Special guifg=#d08700
-  highlight Underlined guifg=#d08700
-  highlight Error guifg=#ffffff guibg=#d08700
+" Base colors
+highlight Normal guifg=#ffffff guibg=NONE
+highlight Comment guifg=#005f5a gui=italic
+highlight Constant guifg=#d08700
+highlight Identifier guifg=#ffffff
+highlight Statement guifg=#ffffff
+highlight PreProc guifg=#d08700
+highlight Type guifg=#ffffff
+highlight Special guifg=#d08700
+highlight Underlined guifg=#d08700
+highlight Error guifg=#ffffff guibg=#d08700
 
   " UI elements
   highlight LineNr guifg=#71717b guibg=NONE
