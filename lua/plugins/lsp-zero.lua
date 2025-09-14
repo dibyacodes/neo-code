@@ -20,29 +20,29 @@ return {
 		config = function()
 			local lsp_zero = require('lsp-zero')
 
-			-- This is where you configure LSP Zero
-			lsp_zero.on_attach(function(client, bufnr)
-				-- see :help lsp-zero-keybindings
-				-- to learn the available actions
-				lsp_zero.default_keymaps({ buffer = bufnr })
-			end)
-			require('lspconfig').ts_ls.setup({
-  on_attach = function(client, bufnr)
-    -- Tell tsserver to use Biome for formatting
-    client.server_capabilities.documentFormattingProvider = true
-    -- Set Biome as the formatter for this buffer
-    vim.api.nvim_buf_set_var(bufnr, 'typescript.format', {
-      command = 'biome',
-      args = { 'format', '--stdin-file-path', '%',
-      '--config-path=~/.config/nvim/biome/biome.json'},
-    })
-  end,
-})
-			require('lspconfig').html.setup({})
-			require('lspconfig').cssls.setup({})
-			require('lspconfig').tailwindcss.setup({})
-			require('lspconfig').pyright.setup({})
-			-- Add any other servers you need
+      -- This is where you configure LSP Zero
+      lsp_zero.on_attach(function(client, bufnr)
+        -- see :help lsp-zero-keybindings
+        -- to learn the available actions
+        lsp_zero.default_keymaps({ buffer = bufnr })
+      end)
+      require('lspconfig').ts_ls.setup({
+        on_attach = function(client, bufnr)
+          -- Tell tsserver to use Biome for formatting
+          client.server_capabilities.documentFormattingProvider = true
+          -- Set Biome as the formatter for this buffer
+          vim.api.nvim_buf_set_var(bufnr, 'typescript.format', {
+            command = 'biome',
+            args = { 'format', '--stdin-file-path', '%',
+            '--config-path=~/.config/nvim/biome/biome.json'},
+          })
+        end,
+      })
+      require('lspconfig').html.setup({})
+      require('lspconfig').cssls.setup({})
+      require('lspconfig').tailwindcss.setup({})
+      require('lspconfig').pyright.setup({})
+      -- Add any other servers you need
 
 			-- Setup Mason to automatically install LSP servers
 			require('mason').setup({})
@@ -64,7 +64,7 @@ return {
 				},
 				mapping = cmp.mapping.preset.insert({
 					['<C-Space>'] = cmp.mapping.complete(),
-					['<CR>'] = cmp.mapping.confirm({ select = true }),
+					['<CR>'] = cmp.mapping.confirm({ select = false }),
 				}),
 				snippet = {
 					expand = function(args)

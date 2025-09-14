@@ -5,5 +5,6 @@ return {
 	require("plugins.lsp-zero"),
 	require("plugins.telescope"),
 	require("plugins.nvim-tree"),
-	require("plugins.treesitter")
+	require("plugins.treesitter"),
+	require("plugins.autotag")
 }
