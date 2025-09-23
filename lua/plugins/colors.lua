@@ -4,11 +4,7 @@ local function enable_transparency()
 end
 return {
     {
-	"folke/tokyonight.nvim",
-	config = function()
-	    vim.cmd.colorscheme "tokyonight"
-	    enable_transparency()
-	end
+	enable_transparency()
     },
     {
 	"nvim-lualine/lualine.nvim",
@@ -26,7 +22,7 @@ return {
 	    floats = "transparent", -- Style for floating windows
 	},
 	opts = {
-	    theme = 'tokyonight',
+	    theme = 'rose-pine',
 
 	}
     }
