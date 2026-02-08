@@ -11,23 +11,33 @@ return {
 	end
     },
 
-    -- auto code completion
-    {
-	"hrsh7th/nvim-cmp",
-	dependencies = {
-	    "hrsh7th/cmp-nvim-lsp",       -- LSP completion source
-	    "hrsh7th/cmp-buffer",         -- Buffer words completion
-	    "hrsh7th/cmp-path",           -- File path completion
-	    "hrsh7th/cmp-cmdline",        -- Command line completion
-	    "saadparwaiz1/cmp_luasnip",   -- Snippet completion
-	},
+{
+    "L3MON4D3/LuaSnip",
+    dependencies = {
+        "rafamadriz/friendly-snippets",
     },
-
+},
     -- Snippet engine
     {
 	"L3MON4D3/LuaSnip",
 	dependencies = {
 	    "rafamadriz/friendly-snippets", -- Collection of pre-configured snippets
 	},
-    }
+    },
+
+    -- Auto-close brackets, quotes, etc
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = true,
+  },
+  
+  -- Auto-close HTML/JSX/TSX tags
+  {
+    "windwp/nvim-ts-autotag",
+    ft = { "html", "xml", "jsx", "tsx", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end
+  },
 }

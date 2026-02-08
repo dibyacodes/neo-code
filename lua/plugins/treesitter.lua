@@ -1,6 +1,9 @@
 return{
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
+    dependencies = {
+      "nvim-ts-autotag",  -- Add this as dependency
+    },
 
     config = function()
 	local configs = require("nvim-treesitter.configs")
@@ -9,13 +12,16 @@ return{
 		enable = true,
 	    },
 	    indent = {enable = true},
-	    autotags = {enable = true},
+	    autotag = {enable = true},
 	    ensure_installed = {
 		"lua",
 		"tsx",
 		"typescript",
+		"javascript",
+		"html",
+		"css"
 	    },
-	    auto_install = false	
+	    auto_install = true	
 	})
     end
 }

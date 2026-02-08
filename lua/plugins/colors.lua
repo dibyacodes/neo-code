@@ -1,29 +1,22 @@
+-- colors.lua should be:
 local function enable_transparency()
     vim.api.nvim_set_hl(0,"Normal",{bg = "none", bold = true})
     vim.api.nvim_set_hl(0,"NormalFloat",{bg = "none"})
 end
+
 return {
     {
-	enable_transparency()
-    },
-    {
-	"nvim-lualine/lualine.nvim",
-	dependencies = {
-	    "nvim-tree/nvim-web-devicons",
-	},
-	styles = {
-	    -- Set font styles for specific categories
-	    comments = { italic = true, bold = true }, -- Italics and bold for comments
-	    keywords = { bold = true }, -- Bold for keywords
-	    functions = { bold = true, italic = true }, -- Bold and italics for functions
-	    variables = { italic = true }, -- Italics for variables
-	    -- Add more categories as needed
-	    sidebars = "dark", -- Style for sidebars (e.g., transparent)
-	    floats = "transparent", -- Style for floating windows
-	},
-	opts = {
-	    theme = 'rose-pine',
-
-	}
+        "nvim-lualine/lualine.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function()
+            enable_transparency()
+            require('lualine').setup({
+                options = {
+                    theme = 'auto',
+                }
+            })
+        end
     }
 }
